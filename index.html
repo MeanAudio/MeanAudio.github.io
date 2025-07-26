@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+    <meta charset="utf-8">
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>MeanAudio</title>
+  <!-- <link rel="icon" type="image/x-icon" href="static/images/favicon.ico"> -->
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <style>
+    .audio-table {
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+      border-collapse: collapse;
+    }
+    .audio-table th,
+    .audio-table td {
+      border-left: none !important;
+      border-right: none !important;
+    }
+    .audio-table th:not(:first-child),
+    .audio-table td:not(:first-child) {
+      border-left: none !important;
+    }
+    .audio-table.is-bordered th,
+    .audio-table.is-bordered td {
+      border-left: none !important;
+      border-right: none !important;
+    }
+    .audio-table th {
+      text-align: center !important;
+      vertical-align: middle;
+      background-color: #f5f5f5;
+      font-weight: bold;
+    }
+    .audio-table td:first-child {
+      text-align: left;
+      vertical-align: middle;
+      width: 35%;
+      font-size: 0.85rem;
+      line-height: 1.4;
+      padding-left: 15px;
+    }
+    .audio-table td:not(:first-child) {
+      text-align: center;
+      vertical-align: middle;
+      width: 16.25%;
+    }
+    .audio-table audio {
+      width: 100%;
+      height: 30px;
+      max-width: 150px;
+    }
+    .audio-table tbody tr {
+      background-color: #f5f5f5 !important;
+    }
+    .audio-table tbody tr:hover {
+      background-color: #f0f8ff !important;
+    }
+  </style>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+
+            <h1 class="title is-2 publication-title" style="margin-left: -25px; margin-right: -25px; font-size: 2.5rem;">MeanAudio: Fast and Faithful Text-to-Audio Generation with Mean Flows</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <!-- <span class="author-block">
+                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
+                <span class="author-block">
+                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
+                  <span class="author-block">
+                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
+                  </span> -->
+                  <!-- </div>  -->
+
+                  <!-- <div class="is-size-5 publication-authors">
+                    <span class="author-block">Institution Name<br>Conferance name and year</span>
+                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                         <!-- Arxiv PDF link -->
+                      <!-- <span class="link-block">
+                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span> -->
+
+                    <!-- Supplementary PDF link -->
+                    <!-- <span class="link-block">
+                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Supplementary</span>
+                    </a>
+                  </span> -->
+
+                  <!-- Github link -->
+                  <!-- <span class="link-block">
+                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span> -->
+
+                <!-- ArXiv abstract Link -->
+                <!-- <span class="link-block">
+                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span> -->
+                <!-- </a> -->
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Overall performance-->
+ <!-- add a image here -->  
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+    
+      <div style="width: 60%; height: auto; margin: 0 auto;"> 
+        <img src="static/images/performance.png" alt="performance" style="width: 100%; height: auto;">
+      </div>
+
+      <p>
+        <div class="content has-text-justified" style="margin: 0 125px;">
+          <br>
+          MeanAudio is a novel MeanFlow-based model tailored for fast and faithful text-to-audio generation. 
+          It can synthesize realistic audio in a single step, achieving a real-time factor (RTF) of 0.013 on a single NVIDIA 3090 GPU.
+          Moreover, it also demonstrates strong performance in multi-step generation. 
+          <br>
+        </div>
+      </p>
+
+    </div>
+  </div>
+</section>
+<!-- End overall performance -->
+
+<!-- Audio samples -->
+<section class="section hero is-light">
+  <div class="container" style="max-width: 900px;">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-fullwidth">
+        <h2 class="title is-3">Single-Step Audio Generation</h2>
+        <br
+        <div class="content has-text-justified">
+          <table class="table is-bordered is-narrow is-hoverable is-fullwidth audio-table">
+            <thead>
+              <tr>
+                <th>Caption</th>
+                <th>MeanAudio<br>1NFE</th>
+                <th>AudioLCM<br>1NFE</th>
+                <th>ConsistencyTTA<br>1NFE</th>
+                <th>GT</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>A speech and gunfire followed by a gun being loaded</td>
+                <td><audio controls src="static/samples/meanaudio_1nfe/YpuZL08fzpXk.wav"></audio></td>
+                <td><audio controls src="static/samples/audiolcm_1nfe/YpuZL08fzpXk.wav"></audio></td>
+                <td><audio controls src="static/samples/consistencytta_1nfe/YpuZL08fzpXk.wav"></audio></td>
+                <td><audio controls src="static/samples/gt/YpuZL08fzpXk.wav"></audio></td>
+              </tr>
+              <tr>
+                <td>Some humming followed by a toilet flushing</td>
+                <td><audio controls src="static/samples/meanaudio_1nfe/Y2ErfX6ZT5pM.wav"></audio></td>
+                <td><audio controls src="static/samples/audiolcm_1nfe/Y2ErfX6ZT5pM.wav"></audio></td>
+                <td><audio controls src="static/samples/consistencytta_1nfe/Y2ErfX6ZT5pM.wav"></audio></td>
+                <td><audio controls src="static/samples/gt/Y2ErfX6ZT5pM.wav"></audio></td>
+              </tr>
+              <tr>
+                <td>Typing on a keyboard</td>
+                <td><audio controls src="static/samples/meanaudio_1nfe/YDAN1t9ukkg0.wav"></audio></td>
+                <td><audio controls src="static/samples/audiolcm_1nfe/YDAN1t9ukkg0.wav"></audio></td>
+                <td><audio controls src="static/samples/consistencytta_1nfe/YDAN1t9ukkg0.wav"></audio></td>
+                <td><audio controls src="static/samples/gt/YDAN1t9ukkg0.wav"></audio></td>
+              </tr>
+              <tr>
+                <td>Rain falling on a hard surface as thunder roars in the distance</td>
+                <td><audio controls src="static/samples/meanaudio_1nfe/YESjMIqrvRj4.wav"></audio></td>
+                <td><audio controls src="static/samples/audiolcm_1nfe/YESjMIqrvRj4.wav"></audio></td>
+                <td><audio controls src="static/samples/consistencytta_1nfe/YESjMIqrvRj4.wav"></audio></td>
+                <td><audio controls src="static/samples/gt/YESjMIqrvRj4.wav"></audio></td>
+              </tr>
+              <tr>
+                <td>Food sizzling and oil popping</td>
+                <td><audio controls src="static/samples/meanaudio_1nfe/YAJtNitYMa1I.wav"></audio></td>
+                <td><audio controls src="static/samples/audiolcm_1nfe/YAJtNitYMa1I.wav"></audio></td>
+                <td><audio controls src="static/samples/consistencytta_1nfe/YAJtNitYMa1I.wav"></audio></td>
+                <td><audio controls src="static/samples/gt/YAJtNitYMa1I.wav"></audio></td>
+              </tr>
+              <tr>
+                <td>Pots and dishes clanking as a man talks followed by liquid pouring into a container</td>
+                <td><audio controls src="static/samples/meanaudio_1nfe/Y8o-Y4QP8LWs.wav"></audio></td>
+                <td><audio controls src="static/samples/audiolcm_1nfe/Y8o-Y4QP8LWs.wav"></audio></td>
+                <td><audio controls src="static/samples/consistencytta_1nfe/Y8o-Y4QP8LWs.wav"></audio></td>
+                <td><audio controls src="static/samples/gt/Y8o-Y4QP8LWs.wav"></audio></td>
+              </tr>
+              <tr>
+                <td>A few seconds of silence then a rasping sound against wood</td>
+                <td><audio controls src="static/samples/meanaudio_1nfe/YKJhGuhNHToA.wav"></audio></td>
+                <td><audio controls src="static/samples/audiolcm_1nfe/YKJhGuhNHToA.wav"></audio></td>
+                <td><audio controls src="static/samples/consistencytta_1nfe/YKJhGuhNHToA.wav"></audio></td>
+                <td><audio controls src="static/samples/gt/YKJhGuhNHToA.wav"></audio></td>
+              </tr>
+              <tr>
+                <td>A man speaks as he gives a speech and then the crowd cheers</td>
+                <td><audio controls src="static/samples/meanaudio_1nfe/Y4CAMv5nlr-0.wav"></audio></td>
+                <td><audio controls src="static/samples/audiolcm_1nfe/Y4CAMv5nlr-0.wav"></audio></td>
+                <td><audio controls src="static/samples/consistencytta_1nfe/Y4CAMv5nlr-0.wav"></audio></td>
+                <td><audio controls src="static/samples/gt/Y4CAMv5nlr-0.wav"></audio></td>
+              </tr>
+              <tr>
+                <td>A goat bleating repeatedly</td>
+                <td><audio controls src="static/samples/meanaudio_1nfe/YVMsbrcHPBfk.wav"></audio></td>
+                <td><audio controls src="static/samples/audiolcm_1nfe/YVMsbrcHPBfk.wav"></audio></td>
+                <td><audio controls src="static/samples/consistencytta_1nfe/YVMsbrcHPBfk.wav"></audio></td>
+                <td><audio controls src="static/samples/gt/YVMsbrcHPBfk.wav"></audio></td>
+              </tr>
+              <tr>
+                <td>Tires squealing followed by an engine revving</td>
+                <td><audio controls src="static/samples/meanaudio_1nfe/YV4PLSw_WzVw.wav"></audio></td>
+                <td><audio controls src="static/samples/audiolcm_1nfe/YV4PLSw_WzVw.wav"></audio></td>
+                <td><audio controls src="static/samples/consistencytta_1nfe/YV4PLSw_WzVw.wav"></audio></td>
+                <td><audio controls src="static/samples/gt/YV4PLSw_WzVw.wav"></audio></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Multi-step audio samples -->
+<section class="section hero is-light">
+  <div class="container" style="max-width: 2000px;">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-fullwidth">
+        <h2 class="title is-3">Multi-Step Audio Generation</h2>
+        <br>
+        <div class="content has-text-justified">
+          <table class="table is-bordered is-narrow is-hoverable is-fullwidth audio-table">
+            <thead>
+              <tr>
+                <th>Caption</th>
+                <th>MeanAudio<br>25NFE</th>
+                <th>GenAU<br>200NFE</th>
+                <th>AudioLDM<br>200NFE</th>
+                <th>GT</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>A speech and gunfire followed by a gun being loaded</td>
+                <td><audio controls src="static/samples/meanaudio_25nfe/YpuZL08fzpXk.wav"></audio></td>
+                <td><audio controls src="static/samples/genau_200nfe/YpuZL08fzpXk.wav"></audio></td>
+                <td><audio controls src="static/samples/audioldm_200nfe/YpuZL08fzpXk.wav"></audio></td>
+                <td><audio controls src="static/samples/gt/YpuZL08fzpXk.wav"></audio></td>
+              </tr>
+              <tr>
+                <td>Some humming followed by a toilet flushing</td>
+                <td><audio controls src="static/samples/meanaudio_25nfe/Y2ErfX6ZT5pM.wav"></audio></td>
+                <td><audio controls src="static/samples/genau_200nfe/Y2ErfX6ZT5pM.wav"></audio></td>
+                <td><audio controls src="static/samples/audioldm_200nfe/Y2ErfX6ZT5pM.wav"></audio></td>
+                <td><audio controls src="static/samples/gt/Y2ErfX6ZT5pM.wav"></audio></td>
+              </tr>
+              <tr>
+                <td>Typing on a keyboard</td>
+                <td><audio controls src="static/samples/meanaudio_25nfe/YDAN1t9ukkg0.wav"></audio></td>
+                <td><audio controls src="static/samples/genau_200nfe/YDAN1t9ukkg0.wav"></audio></td>
+                <td><audio controls src="static/samples/audioldm_200nfe/YDAN1t9ukkg0.wav"></audio></td>
+                <td><audio controls src="static/samples/gt/YDAN1t9ukkg0.wav"></audio></td>
+              </tr>
+              <tr>
+                <td>Rain falling on a hard surface as thunder roars in the distance</td>
+                <td><audio controls src="static/samples/meanaudio_25nfe/YESjMIqrvRj4.wav"></audio></td>
+                <td><audio controls src="static/samples/genau_200nfe/YESjMIqrvRj4.wav"></audio></td>
+                <td><audio controls src="static/samples/audioldm_200nfe/YESjMIqrvRj4.wav"></audio></td>
+                <td><audio controls src="static/samples/gt/YESjMIqrvRj4.wav"></audio></td>
+              </tr>
+              <tr>
+                <td>Food sizzling and oil popping</td>
+                <td><audio controls src="static/samples/meanaudio_25nfe/YAJtNitYMa1I.wav"></audio></td>
+                <td><audio controls src="static/samples/genau_200nfe/YAJtNitYMa1I.wav"></audio></td>
+                <td><audio controls src="static/samples/audioldm_200nfe/YAJtNitYMa1I.wav"></audio></td>
+                <td><audio controls src="static/samples/gt/YAJtNitYMa1I.wav"></audio></td>
+              </tr>
+              <tr>
+                <td>Pots and dishes clanking as a man talks followed by liquid pouring into a container</td>
+                <td><audio controls src="static/samples/meanaudio_25nfe/Y8o-Y4QP8LWs.wav"></audio></td>
+                <td><audio controls src="static/samples/genau_200nfe/Y8o-Y4QP8LWs.wav"></audio></td>
+                <td><audio controls src="static/samples/audioldm_200nfe/Y8o-Y4QP8LWs.wav"></audio></td>
+                <td><audio controls src="static/samples/gt/Y8o-Y4QP8LWs.wav"></audio></td>
+              </tr>
+              <tr>
+                <td>A few seconds of silence then a rasping sound against wood</td>
+                <td><audio controls src="static/samples/meanaudio_25nfe/YKJhGuhNHToA.wav"></audio></td>
+                <td><audio controls src="static/samples/genau_200nfe/YKJhGuhNHToA.wav"></audio></td>
+                <td><audio controls src="static/samples/audioldm_200nfe/YKJhGuhNHToA.wav"></audio></td>
+                <td><audio controls src="static/samples/gt/YKJhGuhNHToA.wav"></audio></td>
+              </tr>
+              <tr>
+                <td>A man speaks as he gives a speech and then the crowd cheers</td>
+                <td><audio controls src="static/samples/meanaudio_25nfe/Y4CAMv5nlr-0.wav"></audio></td>
+                <td><audio controls src="static/samples/genau_200nfe/Y4CAMv5nlr-0.wav"></audio></td>
+                <td><audio controls src="static/samples/audioldm_200nfe/Y4CAMv5nlr-0.wav"></audio></td>
+                <td><audio controls src="static/samples/gt/Y4CAMv5nlr-0.wav"></audio></td>
+              </tr>
+              <tr>
+                <td>A goat bleating repeatedly</td>
+                <td><audio controls src="static/samples/meanaudio_25nfe/YVMsbrcHPBfk.wav"></audio></td>
+                <td><audio controls src="static/samples/genau_200nfe/YVMsbrcHPBfk.wav"></audio></td>
+                <td><audio controls src="static/samples/audioldm_200nfe/YVMsbrcHPBfk.wav"></audio></td>
+                <td><audio controls src="static/samples/gt/YVMsbrcHPBfk.wav"></audio></td>
+              </tr>
+              <tr>
+                <td>Tires squealing followed by an engine revving</td>
+                <td><audio controls src="static/samples/meanaudio_25nfe/YV4PLSw_WzVw.wav"></audio></td>
+                <td><audio controls src="static/samples/genau_200nfe/YV4PLSw_WzVw.wav"></audio></td>
+                <td><audio controls src="static/samples/audioldm_200nfe/YV4PLSw_WzVw.wav"></audio></td>
+                <td><audio controls src="static/samples/gt/YV4PLSw_WzVw.wav"></audio></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End audio samples -->
+
+
+
+<!-- Overall architecture-->
+ <!-- add a image here -->  
+ <section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+             <h2 class="title is-3" style="text-align: center; margin-bottom: 1rem; margin-left: 0; margin-right: 0">
+              <br>
+         Overall Architecture</h2>
+      <p>
+        <div class="content has-text-justified" style="margin: 0 60px;">
+          <br>
+          MeanAudio is based on a Flux-style latent transformer, combining N1  audio/text joint blocks and N2 audio-only blocks.
+          It uses FLAN-T5 and CLAP to encode the textual captions. 
+          Conditioned on the encoded text and the timestep embeddings, MeanAudio regresses the average velocity field for fast and realistic audio generation.
+        </div>
+      </p>
+      <div style="width: 60%; height: auto; margin: 0 auto;"> 
+        <br>
+
+        <img src="static/images/MeanAudio.png" alt="architecture" style="width: 100%; height: auto;">
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- End overall performance -->
+
+
+
+<!--BibTex citation -->
+  <!-- <section class="section" id="BibTeX"> -->
+    <!-- <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>BibTex Code Here</code></pre>
+    </div>
+</section> -->
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
