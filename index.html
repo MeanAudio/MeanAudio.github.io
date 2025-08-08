@@ -210,7 +210,7 @@
       <div class="column is-fullwidth">
         <h2 class="title is-3">Single-Step Audio Generation</h2>
         <br>
-        <i>GT represents audio samples taken from the AudioCaps test set.</i>
+        <i>GT represents real audio samples taken from the AudioCaps test set.</i>
         <div class="content has-text-justified">
           <table class="table is-bordered is-narrow is-hoverable is-fullwidth audio-table">
             <thead>
@@ -314,7 +314,7 @@
             <thead>
               <tr>
                 <th>Caption</th>
-                <th>MeanAudio<br>25NFE</th>
+                <th>MeanAudio (Ours)<br>25NFE</th>
                 <th>GenAU<br>200NFE</th>
                 <th>AudioLDM<br>200NFE</th>
                 <th>GT</th>
@@ -442,21 +442,45 @@
 
 
 
-<h2 class="title is-3" style="text-align: center; margin-bottom: 1rem; margin-left: 0; margin-right: 0">
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+             <h2 class="title is-3" style="text-align: center; margin-bottom: 1rem; margin-left: 0; margin-right: 0">
+              <br>
+              Main Results</h2>
+      <p>
+        <div class="content has-text-justified" style="margin: 0 20px;">
+          <br>
+          MeanAudio achieves state-of-the-art performance on single-step generation, and strong performance on multi-step generation. 
+          It delivers a real-time factor (RTF) of 0.013 on a single NVIDIA 3090 GPU, demonstrating a 100x speedup over existing diffusion-based models.
+        </div>
+      </p>
+      <div style="width: 90%; height: auto; margin: 0 auto;"> 
+        <br>
+
+        <img src="static/images/main_table.png" alt="main table" style="width: 100%; height: auto;">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- <h2 class="title is-3" style="text-align: center; margin-bottom: 1rem; margin-left: 0; margin-right: 0">
   <br>
 Main Results</h2>
 
 <p>
-  <div class="content has-text-justified" style="margin: 0 260px;">
+  <div class="content has-text-justified" style="margin: 0 560px;">
     <br>
    MeanAudio achieves state-of-the-art performance on single-step generation, and strong performance on multi-step generation. 
    It delivers a real-time factor (RTF) of 0.013 on a single NVIDIA 3090 GPU, demonstrating a 100x speedup over existing diffusion-based models.
     <br>
   </div>
-</p>
+</p> -->
 
 
-<section class="hero teaser">
+<!-- <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
     
@@ -466,7 +490,7 @@ Main Results</h2>
 
     </div>
   </div>
-</section>
+</section> -->
 
 
 <footer class="footer">
