@@ -184,12 +184,12 @@
   <div class="container is-max-desktop">
     <div class="hero-body">
     
-      <div style="width: 60%; height: auto; margin: 0 auto;"> 
+      <div style="width: 65%; height: auto; margin: 0 auto;"> 
         <img src="static/images/performance.png" alt="performance" style="width: 100%; height: auto;">
       </div>
 
       <p>
-        <div class="content has-text-justified" style="margin: 0 160px;">
+        <div class="content has-text-justified" style="margin: 0 0;">
           <br>
           MeanAudio is a novel MeanFlow-based model tailored for fast and faithful text-to-audio generation. 
           It can synthesize realistic audio in a single step, achieving a real-time factor (RTF) of 0.013 on a single NVIDIA 3090 GPU.
@@ -205,12 +205,12 @@
 
 <!-- Audio samples -->
 <section class="section hero is-light">
-  <div class="container" style="max-width: 900px;">
+  <div class="container">
     <div class="columns is-centered has-text-centered">
       <div class="column is-fullwidth">
         <h2 class="title is-3">Single-Step Audio Generation</h2>
         <br>
-        <i>GT represents real audio samples taken from the AudioCaps test set.</i>
+        <!-- <i>GT represents real audio samples taken from the AudioCaps test set.</i> -->
         <div class="content has-text-justified">
           <table class="table is-bordered is-narrow is-hoverable is-fullwidth audio-table">
             <thead>
@@ -304,7 +304,7 @@
 
 <!-- Multi-step audio samples -->
 <section class="section hero is-light">
-  <div class="container" style="max-width: 2000px;">
+  <div class="container">
     <div class="columns is-centered has-text-centered">
       <div class="column is-fullwidth">
         <h2 class="title is-3">Multi-Step Audio Generation</h2>
@@ -411,14 +411,14 @@
               <br>
          Overall Architecture</h2>
       <p>
-        <div class="content has-text-justified" style="margin: 0 60px;">
+        <div class="content has-text-justified" style="margin: 0 0px;">
           <br>
           MeanAudio is based on a Flux-style latent transformer, combining N1  audio/text joint blocks and N2 audio-only blocks.
           It uses FLAN-T5 and CLAP to encode the textual captions. 
           Conditioned on the encoded text and the timestep embeddings, MeanAudio regresses the average velocity field for fast and realistic audio generation.
         </div>
       </p>
-      <div style="width: 60%; height: auto; margin: 0 auto;"> 
+      <div style="width: 65%; height: auto; margin: 0 auto;"> 
         <br>
 
         <img src="static/images/MeanAudio.png" alt="architecture" style="width: 100%; height: auto;">
@@ -449,13 +449,13 @@
               <br>
               Main Results</h2>
       <p>
-        <div class="content has-text-justified" style="margin: 0 20px;">
+        <div class="content has-text-justified" style="margin: 0 0px;">
           <br>
           MeanAudio achieves state-of-the-art performance on single-step generation, and strong performance on multi-step generation. 
           It delivers a real-time factor (RTF) of 0.013 on a single NVIDIA 3090 GPU, demonstrating a 100x speedup over existing diffusion-based models.
         </div>
       </p>
-      <div style="width: 90%; height: auto; margin: 0 auto;"> 
+      <div style="width: 100%; height: auto; margin: 0 auto;"> 
         <br>
 
         <img src="static/images/main_table.png" alt="main table" style="width: 100%; height: auto;">
